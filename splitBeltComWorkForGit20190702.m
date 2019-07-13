@@ -75,7 +75,7 @@ test.fvpTimeSeries = 0;
 % also a very useful tool for debugging. The average force in the x and y
 % axes should be zero, and in the z-axis it should be equal to body weight.
 % These are the ideal conditions. But I've never seen this to be exactly
-% true. In my experience, upto 3N away from the ideal is still fine. When
+% true. In my experience, upto 5N away from the ideal is still fine. When
 % comparing the vertical force with body weight, make sure that the manner
 % in which body weight itself was measured is reliable and not without
 % errors/ noise/ drift etc. It is possible that this trial is fine but the
@@ -433,7 +433,7 @@ fBias.meanfxBiasStride = mean(fxBiasStride);
 fBias.meanfyBiasStride = mean(fyBiasStride);
 fBias.meanfzBiasStride = mean(fzBiasStride)-(M*g);
 
-if abs(fBias.meanfxBiasStride)>3 || abs(fBias.meanfyBiasStride)>3 || abs(fBias.meanfzBiasStride)>3
+if abs(fBias.meanfxBiasStride)>5 || abs(fBias.meanfyBiasStride)>5 || abs(fBias.meanfzBiasStride)>5
     warning(strcat('Average forces over the trial ',trialData,' are larger than expected. Use the forceperstride and CheckBias tests to verify the errors are within acceptable ranges.'))
 end
 
