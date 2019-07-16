@@ -69,7 +69,7 @@ test.fvpInterpPlot = 0; % This plots the interpolated data. If this is 0, no fig
 %   next stride. Also, compare the profile and magnitude to literature.
 % 3. The power looks correct. It should be the dot product of the force and
 %   velocity for every time step. Compare profile with literature.
-test.fvpTimeSeries = 0;
+test.fvpTimeSeries = 1;
 
 % This outputs the force per stride averaged across all strides. This is
 % also a very useful tool for debugging. The average force in the x and y
