@@ -30,7 +30,7 @@ clear
 close all
 
 fp = uigetdir(cd,'Select the Directory Where the Individual Data are Stored');
-fns = dir(fullfile(fp,'S*')); % Here "2019" is the repeating term in every participant's folder name
+fns = dir(fullfile(fp,'S*')); % Here "S" is the repeating term in every participant's folder name
 folderInd = [fns.isdir]'; % This just gets a number for each file in the folder, to easily refernece the file
 fns = fns(folderInd);
 
