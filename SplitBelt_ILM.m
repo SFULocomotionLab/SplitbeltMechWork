@@ -50,7 +50,10 @@ subj = cell(length(fns),1); %each cell contains results for one subject
 for i=1:length(fns) %loop to go through each participant
     load(fullfile(fp,fns(i).name,'Data.mat'));
     varIN.Fs = Data.Fs.Force; % frequency at which force data were collected. Note that this assumes all participants were collected at same frequency
-    M(i,1) = Data.Demographics.Mass; %participant's mass
+    % Note: This is currently not used in any calculations. Mass is used in
+    % the calcualation of mechanical power, but that mass is calulated on a
+    % step by step basis. Details in computePower() function.
+    M(i,1) = Data.Demographics.Mass; %participant's mass.
     legLength(i,1) = str2num(Data.Demographics.Leg_Length)./1000; % converting to metres
     trials = Data.Trials;
     trialData = fieldnames(trials);
